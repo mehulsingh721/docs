@@ -33,7 +33,7 @@ A withdrawal needs two signatures from you: a **permit** and a **withdrawal auth
     Withdrawing USDC to the same chain your wallet is funded on is direct and **near-instant**. Your relayer-submitted transaction settles on-chain and the USDC lands straight in your destination address.
   </Tab>
   <Tab title="Cross-chain">
-    Withdrawing to a different chain, or into a different token, routes through **deBridge**. Both **EVM chains and Solana** are supported as destinations — pick your chain and token, and the bridge handles the hop after Speculate submits your withdrawal.
+    Withdrawing to a different chain, or into a different token, routes through **[deBridge](https://debridge.com)**. Both **EVM chains and Solana** are supported as destinations — pick your chain and token, and the bridge handles the hop after Speculate submits your withdrawal.
   </Tab>
 </Tabs>
 
@@ -45,17 +45,17 @@ Before you confirm anything, you see the full breakdown:
 | --- | --- | --- |
 | Network fee | The on-chain gas, charged in USDC | Every withdrawal |
 | Operational buffer | A small buffer on top of gas | Every withdrawal |
-| Bridge fee | deBridge's fee for routing cross-chain | Cross-chain only |
+| Bridge fee | [deBridge](https://docs.debridge.com/dln-details/overview/fee-structure)'s cross-chain fee — a **0.04%** protocol fee plus a small solver spread | Cross-chain only |
 
 <Tip>
-  The confirm dialog shows exactly what you'll receive after fees — no surprises between what you request and what lands in your wallet. Same-chain is the cheapest path since there's no bridge fee to add.
+  The confirm dialog shows what you'll receive after fees before you commit — an exact figure for same-chain withdrawals, and a close estimate for cross-chain (the bridge rate can move slightly). Same-chain is the cheapest path since there's no bridge fee to add.
 </Tip>
 
 For the full rate card and how withdrawal fees compare to everything else on the platform, see [Fees](/about/fees).
 
 ## Status
 
-Every withdrawal moves through three states:
+Every withdrawal moves through these states:
 
 <Steps>
   <Step title="Queued">
@@ -66,6 +66,9 @@ Every withdrawal moves through three states:
   </Step>
   <Step title="Confirmed">
     The source-chain transaction is finalized. Same-chain withdrawals have landed at your destination; cross-chain, the bridge delivers to your destination shortly after.
+  </Step>
+  <Step title="Failed">
+    If a withdrawal can't be completed, it's marked **failed** — and you're **not charged**. Your USDC stays in your wallet, ready to try again.
   </Step>
 </Steps>
 

@@ -21,7 +21,7 @@ Speculate figures out the fastest path automatically. Connect your wallet, pick 
     </Check>
   </Tab>
   <Tab title="Another chain or token">
-    Depositing anything else — a different token, or USDC on a different chain — gets routed automatically through the **deBridge** bridge. Speculate supports bridged deposits from:
+    Depositing anything else — a different token, or USDC on a different chain — gets routed automatically through **[deBridge](https://debridge.com)**, a cross-chain liquidity network. Speculate supports bridged deposits from:
 
     - Ethereum
     - Arbitrum
@@ -33,6 +33,10 @@ Speculate figures out the fastest path automatically. Connect your wallet, pick 
     - Solana
 
     Before you confirm, you'll see the full quote: **exchange rate**, **bridge fee**, **network fee**, and an **estimated time** to land. Nothing moves until you approve that quote.
+
+    <Info>
+      **How deBridge's fee works.** deBridge charges a **0.04%** protocol fee on the amount you bridge, plus a small solver spread (typically about another 0.04%). On top of that, the source chain's network takes a **fixed fee in its native gas token** — a small amount that varies by chain and is shown live in your quote (deBridge sets it on-chain per network rather than as a flat table). If a bridge order is ever cancelled, the fees are refunded. See deBridge's [fee structure](https://docs.debridge.com/dln-details/overview/fee-structure) for the full model.
+    </Info>
 
     <Warning>
       If fees would eat more than **~10%** of the deposit amount, Speculate warns you before you confirm. Small deposits from expensive chains are where this shows up most — check the quote.
@@ -57,7 +61,7 @@ Prefer to send it yourself? You can copy your deposit address from the wallet pa
 
 ## Minimum deposit amounts
 
-Deposits below these amounts won't be processed:
+We recommend depositing at least these amounts — smaller deposits are usually uneconomical once bridge and network fees are taken out:
 
 | Asset | Minimum |
 | --- | --- |

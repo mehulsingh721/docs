@@ -1,0 +1,54 @@
+---
+title: "Duels"
+description: "1v1 winner-take-all trading battles"
+icon: "swords"
+---
+
+A Duel is Speculate stripped down to its purest form: **you versus one other trader, same clock, same market, winner takes it all.**
+
+Structurally, a Duel is just a two-person competition. It runs on the exact same trade screen, the exact same live Hyperliquid and Kraken price feeds, and the exact same **\$10,000 simulated practice balance** every player starts with. Nothing about the trading experience changes — what changes is the stakes, and how they get settled.
+
+<Note>
+  The trading in a Duel is simulated. The stakes are real. Your PnL is measured on a practice balance, but the entry fee both of you post is real USDC — and it moves.
+</Note>
+
+## Winner takes all
+
+Both players post the **same entry fee** to lock in. Whoever ends the Duel with the better result wins the full pot:
+
+$$
+\text{Payout} = 2 \times \text{Entry Fee}
+$$
+
+There is **no platform fee** on Duels. Every dollar in the pot came from a player, and every dollar out goes to a player — Speculate doesn't take a cut. Compare that to competitions, where a platform fee is deducted before the prize pool is set; see [Fees](/about/fees) for the full breakdown.
+
+<Tip>
+  Because there's no rake, a Duel's economics are simple: risk your entry fee, win double it, or lose it. Your maximum real loss is always capped at what you posted to enter.
+</Tip>
+
+## Settlement is on-chain and gasless
+
+Real-money Duels aren't tracked in a database and paid out on trust — the entry fees sit in an **on-chain escrow contract on HyperEVM** until the Duel resolves, and the payout is a contract call, not a promise.
+
+You never need gas in your wallet to make any of this happen. Speculate relays every transaction on your behalf — creating a Duel, accepting one, and settling the payout are all **gasless**. You sign, Speculate submits.
+
+## Two ways to start a fight
+
+- **Open challenge** — post a Duel for anyone to accept. First trader who takes it locks the second slot.
+- **Directed challenge** — call out a specific friend by sending them a direct invite. Only they can accept it.
+
+Both paths use the same entry fee, asset, and duration parameters — see [Creating a duel](/duels/creating) for the full setup flow.
+
+<Info>
+  Free, bragging-rights-only Duels exist in the product, but they're currently limited to internal testing and aren't available to players yet.
+</Info>
+
+<CardGroup cols={2}>
+  <Card title="Creating a duel" icon="plus" href="/duels/creating">
+    Set your asset, entry fee, duration, and leverage — then open the challenge or send it directly to a friend.
+  </Card>
+
+  <Card title="Duel rules" icon="scale" href="/duels/rules">
+    How winners are decided, what happens on a tie, and the cancellation and refund rules.
+  </Card>
+</CardGroup>

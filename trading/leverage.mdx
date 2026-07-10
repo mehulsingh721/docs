@@ -1,0 +1,79 @@
+---
+title: "Leverage & liquidations"
+description: "Margin, leverage, and liquidation"
+icon: "gauge"
+---
+
+Leverage amplifies both sides of a trade. It's what turns a **1%** move into a real swing on your simulated balance — and what turns a bad entry into a liquidation. This page covers how leverage, margin, and liquidation work on Speculate's competition engine.
+
+<Note>
+  Competition trading runs on Speculate's own simulated engine using real market prices — it is not routed to a live exchange. Leverage, margin, and liquidation mechanics mirror a real perpetuals venue so the skill is real, even though the balance is not. Real USDC only ever moves through entry fees and prize payouts. See [Payouts](/competitions/payouts) for how simulated performance converts into real winnings.
+</Note>
+
+## Leverage
+
+Leverage is adjustable per position, from **1x** up to the competition's maximum. Competitions run leverage caps as high as **100x**, set individually per competition.
+
+- **Lower leverage** — more room before liquidation, smaller notional exposure per dollar of margin.
+- **Higher leverage** — bigger notional exposure per dollar of margin, but a smaller adverse move liquidates the position.
+
+<Warning>
+  Higher leverage means a smaller price move can wipe out your margin. A **10x** position is liquidated by roughly a 10x smaller move than a 1x position. Leverage is a risk multiplier in both directions.
+</Warning>
+
+Check the competition's rules for its specific maximum before you size a position — see [Order types](/trading/order-types) for how leverage interacts with order execution.
+
+## Margin mode
+
+Competitions use **cross margin**. Your entire simulated balance backs every open position, rather than each position holding its own isolated slice of margin.
+
+<Info>
+  Under cross margin, gains and losses across all your open positions share the same collateral pool. A losing position can draw down margin that a winning position would otherwise keep safe — and vice versa.
+</Info>
+
+## Liquidation
+
+A position is liquidated when your **equity falls below the maintenance margin requirement** for that position's size. Maintenance margin isn't a flat percentage — it scales with position size through a tiered schedule: bigger positions require a larger maintenance margin and cap out at lower maximum leverage.
+
+<Steps>
+  <Step title="Open a position">
+    You post margin and select leverage up to the competition's cap.
+  </Step>
+  <Step title="Price moves against you">
+    Unrealized losses reduce your equity on that position.
+  </Step>
+  <Step title="Equity crosses the maintenance threshold">
+    Once equity falls below the maintenance margin requirement for your position's tier, liquidation is triggered.
+  </Step>
+  <Step title="Position is closed">
+    The position is liquidated, capping further loss on that position within your simulated balance.
+  </Step>
+</Steps>
+
+## Maintenance margin tiers
+
+Maintenance margin requirements rise in steps as position size (notional) grows. Larger positions demand more maintenance margin and unlock less maximum leverage.
+
+| Position size (notional) | Maintenance margin rate | Max leverage |
+| --- | --- | --- |
+| Up to ~\$300,000 | ~0.4% | Up to 125x (engine max) |
+| Mid-size tiers | Progressively higher | Progressively lower |
+| Largest tier | Highest | 1x |
+
+<Note>
+  These are the underlying engine tiers. The **actual leverage cap you can select is set by each competition**, up to **100x** — a competition's max leverage will never exceed its own configured cap, even if the engine tier would technically allow more.
+</Note>
+
+<Tip>
+  Smaller positions get the cheapest maintenance margin and the most leverage headroom. If you want to run high leverage, keep position size well inside the lowest tier.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Payouts & ROI ranking" icon="lucide-trophy" href="/competitions/payouts">
+    See how simulated performance is ranked and converted into real prize payouts.
+  </Card>
+
+  <Card title="Order types" icon="lucide-list" href="/trading/order-types">
+    Review how market, limit, and other order types interact with leverage and margin.
+  </Card>
+</CardGroup>

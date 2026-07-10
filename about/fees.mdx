@@ -1,0 +1,124 @@
+---
+title: "Fees"
+description: "Every fee on Speculate"
+icon: "percent"
+---
+
+Speculate's fees are simple, and mostly gasless. Before the numbers, understand the two kinds of money on the platform:
+
+<Note>
+  **The trading is simulated, the stakes are real.** Your **\$10,000 practice balance** inside a competition isn't real money — it's simulated capital on Speculate's own engine, priced off live Kraken market data. What's real is the **USDC** that moves through entry fees, prize pools, duels, and HyperStake. Your maximum real loss in any paid competition is capped at your entry fee.
+</Note>
+
+This page is the full rulebook: every fee, every rate, no surprises.
+
+## Competition platform fee
+
+Speculate takes an **8% platform fee** on the prize pool of every paid competition. The other **92%** is distributed to winners.
+
+$$
+\text{Prize Pool} = \text{Entry Fee} \times \text{Max Participants} \times 0.92
+$$
+
+<Tip>
+  The fee comes out of the pool once, up front — it's already baked into the prize pool you see before you join. There's no separate charge at entry or at payout.
+</Tip>
+
+**Worked example** — a 20-player competition at \$50 entry:
+
+|  |  |
+| --- | --- |
+| Entry fee | \$50 |
+| Max participants | 20 |
+| Gross pool (entry × players) | \$1,000 |
+| Platform fee (8%) | \$80 |
+| Distributable prize pool (92%) | **\$920** |
+
+That \$920 is what gets split across paid ranks. See [Payouts](/competitions/payouts) for how the curve divides it up.
+
+## Duels
+
+**Duels charge no platform fee at all.**
+
+Both players post the same entry fee into escrow. The winner takes the entire pot — **2× the entry fee** — with nothing skimmed off the top.
+
+|  |  |
+| --- | --- |
+| Entry fee (each player) | \$E |
+| Total escrow | 2 × \$E |
+| Platform fee | **\$0** |
+| Winner receives | **2 × \$E** |
+
+Losing is capped at your entry — there's no way to lose more than you put in. See [Duels](/duels/overview) for the full 1v1 format.
+
+## Simulated trading fees
+
+Every trade you place _inside a competition_ pays a small simulated fee, deducted from your **practice balance only** — never from your real USDC.
+
+| Order type | Fee |
+| --- | --- |
+| Maker | 0.02% |
+| Taker | 0.04% |
+
+These fees exist to make the simulated engine behave like a real market — they affect your ROI and your rank, but they never touch your wallet. Read more on how orders execute in [The Trading Engine](/trading/overview).
+
+## Withdrawal fees
+
+Withdrawals are **gasless**. You sign an authorization, and Speculate's relayer submits the transaction and pays the network gas on your behalf.
+
+<Steps>
+  <Step title="You sign">
+    No ETH required — just a signature.
+  </Step>
+  <Step title="Relayer pays gas">
+    Speculate's relayer covers the on-chain gas cost.
+  </Step>
+  <Step title="Deducted in USDC">
+    The gas cost, plus a small operational buffer, is deducted from your USDC. If you're withdrawing cross-chain, a bridge fee is added too.
+  </Step>
+</Steps>
+
+<Info>
+  Withdrawing on the same chain you're funded on is the cheapest path. Bridging to a different chain adds a bridge fee on top of the gas buffer. See [Withdrawals](/wallet/withdrawals) for the full flow.
+</Info>
+
+## HyperStake fees
+
+HyperStake is different from competitions — it executes **real trades on Hyperliquid**, not the simulated engine. Fees follow Hyperliquid's own fee schedule.
+
+| Action | Fee |
+| --- | --- |
+| Entry (taker) | ~0.045% |
+| Exit (taker) | ~0.045% |
+
+<Note>
+  Speculate's platform builder fee on HyperStake is **currently off** — you pay Hyperliquid's standard taker fee and nothing extra on top. See [HyperStake](/hyperstake/overview) for how bets work.
+</Note>
+
+## \$SPEC token benefits
+
+<Tip>
+  \*\*Paying with $SPEC pays you back.** Post-launch, buying into competitions with $SPEC gets you **up to a 5% discount** on your entry fee. And if you hold $SPEC, you share in the platform's revenue: **1.5% of the 8% competition fee** is distributed to $SPEC holders every month.
+</Tip>
+
+Full tokenomics — supply, allocations, and utility — live on [\$SPEC Tokenomics](/rewards/spec-token).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Payouts" icon="trophy" href="/competitions/payouts">
+    How the 92% prize pool splits across ranks.
+  </Card>
+
+  <Card title="Duels" icon="swords" href="/duels/overview">
+    1v1, winner-take-all, zero platform fee.
+  </Card>
+
+  <Card title="Withdrawals" icon="wallet" href="/wallet/withdrawals">
+    Gasless withdrawals, fee breakdown, and bridging.
+  </Card>
+
+  <Card title="$SPEC Tokenomics" icon="coins" href="/rewards/spec-token">
+    Supply, allocations, and holder utility.
+  </Card>
+</CardGroup>

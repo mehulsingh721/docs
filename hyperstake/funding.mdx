@@ -1,0 +1,52 @@
+---
+title: "Funding HyperStake"
+description: "Deposit and withdraw on Hyperliquid"
+icon: "banknote"
+---
+
+HyperStake trades on **real Hyperliquid perps** — not the simulated competition engine. That means funding it works differently too: this is actual USDC moving on-chain, into and out of a real Hyperliquid trading account.
+
+<Note>
+  Your HyperStake balance is **real money**, entirely separate from your **simulated** competition balance. Depositing into HyperStake does not touch your competition entry funds, and vice versa. See [HyperStake overview](/hyperstake/overview) for how the account itself works, and [Wallet overview](/wallet/overview) for your Speculate wallet more broadly.
+</Note>
+
+## Depositing
+
+Depositing moves USDC from HyperEVM into your Hyperliquid trading account, where it becomes available margin for perps.
+
+<Steps>
+  <Step title="Sign once">
+    You authorize the deposit with a single signature — no separate gas transaction to manage.
+  </Step>
+  <Step title="Relayer completes it">
+    A relayer takes it from there and completes the transfer on your behalf. It's **gasless** — you never pay network fees to move funds in.
+  </Step>
+  <Step title="Pending → credited">
+    The deposit is processed asynchronously. It briefly sits in a **pending** state before moving to **credited**, at which point it's live as usable margin in your Hyperliquid account.
+  </Step>
+</Steps>
+
+<Info>
+  Minimum deposit is **\$5 USDC**.
+</Info>
+
+## Withdrawing
+
+Withdrawing moves USDC back out of your Hyperliquid trading account.
+
+- **Minimum withdrawal:** **\$2**.
+- **Bridge fee:** Hyperliquid charges a bridge fee of about **\$1.10** on withdrawals.
+
+<Tip>
+  This fee is **reserved automatically** before your withdrawal goes through, so you can't submit a withdrawal that gets rejected for leaving too little behind to cover it.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="HyperStake overview" icon="zap" href="/hyperstake/overview">
+    How the real-money Hyperliquid perps account works on Speculate.
+  </Card>
+
+  <Card title="Wallet overview" icon="wallet" href="/wallet/overview">
+    Your Speculate wallet, balances, and how funds move across the app.
+  </Card>
+</CardGroup>

@@ -1,0 +1,82 @@
+---
+title: "Withdrawals"
+description: "Move USDC out, gaslessly"
+icon: "arrow-up-from-line"
+---
+
+Withdrawals pay out **USDC** from your trading wallet to any address you choose. No ETH needed, no gas station detour — you sign, and Speculate's relayer handles the rest.
+
+<Note>
+  **The trading is simulated, the stakes are real.** Your competition balance is practice capital — but the USDC in your wallet is real, and withdrawing it is a real on-chain transfer to a real address.
+</Note>
+
+## Gasless by design
+
+A withdrawal needs two signatures from you: a **permit** and a **withdrawal authorization**. That's it — no wallet top-up, no scrambling for ETH to pay gas.
+
+<Steps>
+  <Step title="You sign">
+    Sign the permit and the withdrawal authorization. Both are off-chain signatures — free, instant, no gas.
+  </Step>
+  <Step title="Relayer submits">
+    Speculate's relayer takes your signed authorization and submits the transaction on-chain, fronting the gas.
+  </Step>
+  <Step title="Gas deducted in USDC">
+    We cover the gas and deduct it in USDC. No ETH needed on your end — ever.
+  </Step>
+</Steps>
+
+## Two paths
+
+<Tabs>
+  <Tab title="Same-chain">
+    Withdrawing USDC to the same chain your wallet is funded on is direct and **near-instant**. Your relayer-submitted transaction settles on-chain and the USDC lands straight in your destination address.
+  </Tab>
+  <Tab title="Cross-chain">
+    Withdrawing to a different chain, or into a different token, routes through **deBridge**. Both **EVM chains and Solana** are supported as destinations — pick your chain and token, and the bridge handles the hop after Speculate submits your withdrawal.
+  </Tab>
+</Tabs>
+
+## Fees
+
+Before you confirm anything, you see the full breakdown:
+
+| Fee | What it is | When it applies |
+| --- | --- | --- |
+| Network fee | The on-chain gas, charged in USDC | Every withdrawal |
+| Operational buffer | A small buffer on top of gas | Every withdrawal |
+| Bridge fee | deBridge's fee for routing cross-chain | Cross-chain only |
+
+<Tip>
+  The confirm dialog shows exactly what you'll receive after fees — no surprises between what you request and what lands in your wallet. Same-chain is the cheapest path since there's no bridge fee to add.
+</Tip>
+
+For the full rate card and how withdrawal fees compare to everything else on the platform, see [Fees](/about/fees).
+
+## Status
+
+Every withdrawal moves through three states:
+
+<Steps>
+  <Step title="Queued">
+    Your signed authorization has been received and is waiting to be submitted.
+  </Step>
+  <Step title="Submitted">
+    The relayer has broadcast the transaction on-chain (and, for cross-chain, handed it off to deBridge).
+  </Step>
+  <Step title="Confirmed">
+    The source-chain transaction is finalized. Same-chain withdrawals have landed at your destination; cross-chain, the bridge delivers to your destination shortly after.
+  </Step>
+</Steps>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Deposits" icon="arrow-down-to-line" href="/wallet/deposits">
+    Funding your trading wallet, the other half of the flow.
+  </Card>
+
+  <Card title="Fees" icon="percent" href="/about/fees">
+    Every fee on Speculate, withdrawal costs included.
+  </Card>
+</CardGroup>

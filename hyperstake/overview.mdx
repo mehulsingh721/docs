@@ -1,0 +1,78 @@
+---
+title: "HyperStake"
+description: "One-tap leveraged bets on Hyperliquid"
+icon: "zap"
+---
+
+Everywhere else on Speculate, you trade with a **simulated** balance — the stakes are real, the fills are not. HyperStake flips that.
+
+<Info>
+  HyperStake is a separate, **real-money** product. Every bet you place is executed as a real position on **Hyperliquid perps** — not on Speculate's simulated engine. There's no paper balance here. Compare that to [competition trading](/trading/overview), where you get a \$10,000 simulated balance and your real risk is capped at your entry fee.
+</Info>
+
+No charts to read, no order book to manage. Pick a side, pick a payout, tap once.
+
+## How a bet works
+
+A HyperStake bet has four inputs. You control all four; the platform does the rest.
+
+<Steps>
+  <Step title="Pick an asset">
+    **BTC** or **ETH**. That's the full list — HyperStake keeps the surface area small on purpose.
+  </Step>
+  <Step title="Pick a direction">
+    **UP** or **DOWN**. You're betting on where price goes from here.
+  </Step>
+  <Step title="Pick a stake">
+    This is your maximum loss on the bet — anywhere from $1 to $**50,000**.
+  </Step>
+  <Step title="Pick a payout multiplier (k)">
+    Quick-picks are **2x, 4x, 10x, 25x, 50x, and 100x**, with a slider for anything in between up to **100x**. The multiplier sets your payout, not a leverage dial — there is no leverage slider in HyperStake. Leverage is derived automatically from the asset you pick.
+  </Step>
+</Steps>
+
+If you win, you profit **(k − 1) × stake**. A 4x bet that wins pays out 3x your stake in profit, on top of getting your stake back. The higher the multiplier, the farther your take-profit sits and the lower the odds of hitting it — the fair win probability is roughly **1/k**.
+
+<Warning>
+  Perpetuals are leveraged and high-risk. Only stake what you can afford to lose — a stopped-out bet loses your full stake, and higher multipliers are far less likely to pay out.
+</Warning>
+
+## Multiplier, odds, and profit
+
+The math is the same for every bet: pick a bigger multiplier, accept lower odds (a target that sits farther away), in exchange for a bigger payout.
+
+| Multiplier (k) | Fair win probability (~1/k) | Profit if you win |
+| --- | --- | --- |
+| **2x** | ~50% | 1x stake |
+| **4x** | ~25% | 3x stake |
+| **10x** | ~10% | 9x stake |
+
+Custom multipliers up to **100x** follow the same curve — the fair odds keep shrinking as k climbs.
+
+## Assets
+
+Only two assets are live today, each with its own leverage ceiling and stop distance:
+
+| Asset | Max leverage | Stop distance |
+| --- | --- | --- |
+| **BTC** | up to ~40x | ~1.2% |
+| **ETH** | up to ~25x | ~1.6% |
+
+These parameters are what the system uses to derive your position's actual leverage on Hyperliquid — you never set leverage directly.
+
+## Safety
+
+HyperStake is built to fail safely rather than surprise you:
+
+- **The stop always sits inside your liquidation price.** A normal stop-out happens before liquidation ever could — you lose your stake, not more.
+- **Entry uses an aggressive fill** that can cross the book by up to **1%** to get you in fast. If it can't fill at all, the bet **fails outright and you are not charged**.
+- **One open bet at a time.** You can't stack HyperStake positions — settle or close the current one before opening another.
+- **Take-profit and stop-loss are grouped for you** as a single **OCO (one-cancels-other) bracket** placed directly on Hyperliquid. You don't manage two separate orders.
+
+## One-tap signing
+
+There's no wallet pop-up per bet. Bets are signed for you server-side using a **delegated session signer**, so placing a bet is genuinely one tap — pick your four inputs and go.
+
+<Card title="Funding your HyperStake account" icon="wallet" href="/hyperstake/funding">
+  See how deposits and withdrawals move USDC between your wallet and your Hyperliquid account.
+</Card>

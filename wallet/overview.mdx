@@ -1,0 +1,44 @@
+---
+title: "Your wallet"
+description: "The Speculate trading wallet"
+icon: "wallet"
+---
+
+Every Speculate account comes with a wallet already attached — you never have to install an extension or manage a seed phrase before you can play.
+
+The moment you sign up, whether with an email or an existing wallet, Speculate creates an **embedded, self-custodial trading wallet** for you behind the scenes. It supports both **EVM and Solana**, and it's the account that actually holds your funds: your USDC lives here, and this is what pays every competition entry, Duel stake, and HyperStake bet.
+
+<Note>
+  Self-custodial means exactly what it sounds like. **You hold the keys.** Speculate can create the wallet and make it easy to use, but it can't move your funds without your signature — and you can export the wallet at any time to use it anywhere else.
+</Note>
+
+## What the wallet page shows
+
+Your wallet page is the single source of truth for your funds on Speculate:
+
+- **Available USDC balance** — what you can spend right now on entries, Duels, or HyperStake
+- **Your trading wallet address** — the actual on-chain address behind your account
+- **Total spent in competitions** — the running sum of entry fees you've paid
+- **Total earnings** — everything you've won and claimed back
+- **Total withdrawals** — everything you've pulled out to an external wallet
+- **A unified activity feed** — every deposit, withdrawal, and transaction in one chronological list, so you never have to cross-reference separate histories to see where your money went
+
+## Networks
+
+Speculate runs primarily on **HyperEVM**. That's the network your wallet is built for, and it's where new deposits, competition entries, and Duel escrows all settle today.
+
+**Arbitrum is a legacy network being wound down.** It was Speculate's original home before the move to HyperEVM, and it's no longer where new activity happens.
+
+<Tip>
+  Still holding USDC on Arbitrum? A **one-click, gasless migration** moves it over to HyperEVM for you — no manual bridging, no gas to find. And you don't need to worry about timing it around anything you have running: **any competitions you joined on Arbitrum keep playing out normally** while your balance migrates.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Deposits" icon="arrow-down-to-line" href="/wallet/deposits">
+    How to fund your wallet and get USDC ready to spend.
+  </Card>
+
+  <Card title="Withdrawals" icon="arrow-up-from-line" href="/wallet/withdrawals">
+    How to move your balance back out to an external wallet.
+  </Card>
+</CardGroup>

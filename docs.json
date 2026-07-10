@@ -1,0 +1,134 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Speculate",
+  "colors": {
+    "primary": "#2C9E8C",
+    "light": "#8AF0E6",
+    "dark": "#74D6CB"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "index",
+          "about/overview",
+          "about/who",
+          "about/why"
+        ]
+      },
+      {
+        "group": "Competitions",
+        "pages": [
+          "competitions/overview",
+          "competitions/lifecycle",
+          "competitions/payouts",
+          "competitions/spectating"
+        ]
+      },
+      {
+        "group": "Duels",
+        "pages": [
+          "duels/overview",
+          "duels/creating",
+          "duels/rules"
+        ]
+      },
+      {
+        "group": "Trading",
+        "pages": [
+          "trading/overview",
+          "trading/order-types",
+          "trading/leverage"
+        ]
+      },
+      {
+        "group": "HyperStake",
+        "pages": [
+          "hyperstake/overview",
+          "hyperstake/funding"
+        ]
+      },
+      {
+        "group": "Wallet & Funds",
+        "pages": [
+          "wallet/overview",
+          "wallet/deposits",
+          "wallet/withdrawals"
+        ]
+      },
+      {
+        "group": "XP & Rewards",
+        "pages": [
+          "rewards/xp",
+          "rewards/earning",
+          "rewards/tiers",
+          "rewards/spec-token",
+          "rewards/referrals"
+        ]
+      },
+      {
+        "group": "Reference",
+        "pages": [
+          "about/fees",
+          "faq"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "https://x.com/SpeculateTrade",
+        "label": "X"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open App",
+      "href": "https://app.speculate.trade"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/SpeculateTrade"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#ffffff",
+      "dark": "#0c0d11"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+---
+title: "Competitions"
+description: "Multiplayer trading contests"
+icon: "trophy"
+---
+
+Competitions are Speculate's flagship format: multiplayer trading contests where everyone starts on equal footing and only performance decides the winner.
+
+Every entrant gets the **same \$10,000 simulated balance** and trades it over a fixed window on real market prices. When the clock runs out, whoever posted the **highest ROI** wins. That's the whole contest — no seniority, no capital advantage, no head start.
+
+<Note>
+  The trading is simulated, the stakes are real. Your \$10,000 balance lives on Speculate's own engine — but **entry fees and prize pools move in real USDC.** The most you can lose in a paid competition is your entry fee.
+</Note>
+
+## What each competition defines
+
+Every competition is built from the same set of parameters. These are what actually differentiate one contest from another — not the mode tag on the card.
+
+| Parameter | What it controls |
+| --- | --- |
+| **Entry fee** | Real USDC cost to join (can be \$0) |
+| **Prize pool** | Real USDC paid out to top finishers |
+| **Max participants** | How many traders can fill the lobby |
+| **Max leverage** | Set per competition (commonly **10x, 25x, 50x, 75x, or 100x**) |
+| **Duration** | Minimum **5 minutes** |
+| **Trading symbol** | A single asset per competition |
+
+<Tip>
+  A competition's identity is really just this table. Two competitions tagged the same "vibe" can have completely different stakes, lobby sizes, and leverage caps.
+</Tip>
+
+## Free competitions
+
+Not every seat costs USDC. Speculate runs three access models side by side:
+
+- **Free competitions** — **\$0 entry**, trading the same simulated demo capital as any paid lobby. Great for practicing without risking a dime.
+- **Token-gated competitions** — free-entry lobbies restricted to traders holding **at least** $50 of $**SPEC**, verified with a Solana wallet signature.
+- **Private / whitelist competitions** — invite-only lobbies that skip the wait. They start **as soon as they fill**, instead of sitting on a countdown.
+
+## Finding competitions
+
+The **Explore** page is your discovery surface. It's built around three curated rails:
+
+- **Featured** — the competitions Speculate is spotlighting right now
+- **Trending** — where the action is
+- **New** — freshly created lobbies still filling up
+
+Layer status filters on top — **All, Live, Upcoming, Ended, My Competitions** — to narrow the view to exactly what you're chasing, whether that's a lobby you can still join or a scoreboard you want to check.
+
+## Game modes
+
+Competitions also carry a mode tag: **Burst, Express, Blitz, Showdown,** or **Marathon**.
+
+<Warning>
+  Game modes are **filter labels, not rule sets.** They exist to help you browse by vibe — they don't change how a competition runs. Every competition, regardless of tag, follows the exact same lifecycle and payout rules. The real differences between two competitions are their entry fee, participant count, leverage cap, and duration — the parameters in the table above.
+</Warning>
+
+So use the tags to browse fast, but read the actual parameters before you join.
+
+<CardGroup cols={2}>
+  <Card title="Lifecycle" icon="refresh-cw" href="/competitions/lifecycle">
+    How a competition moves from join to payout — fill, activation, live trading, settlement, and claiming.
+  </Card>
+
+  <Card title="Payouts" icon="coins" href="/competitions/payouts">
+    How prize pools are split and how ROI ranking determines who gets paid.
+  </Card>
+
+  <Card title="Spectating" icon="eye" href="/competitions/spectating">
+    Watch any competition live — leaderboard, chart, and orderbook, no entry required.
+  </Card>
+
+  <Card title="Trading engine" icon="chart-candlestick" href="/trading/overview">
+    How the simulated balance, pricing feeds, and order execution actually work.
+  </Card>
+</CardGroup>

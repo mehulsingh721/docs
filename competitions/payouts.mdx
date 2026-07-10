@@ -1,0 +1,80 @@
+---
+title: "Prize pools & payouts"
+description: "How winners are paid"
+icon: "coins"
+---
+
+Every [competition](/competitions/overview) runs on the same payout math. No favorites, no manual adjustments — the pool splits by formula the moment the clock hits zero.
+
+## How winners are ranked
+
+Rank is decided by **ROI — PnL percentage on the simulated balance — highest first.**
+
+That's relative performance, not absolute dollars. Every participant starts from the same \*\*$10,000 simulated balance**, so the trader who turns $10,000 into $10,800 (+8%) outranks one who turns it into $10,500 (\+5%) — position size and starting capital never enter into it. It's a level field: skill and conviction decide the standings, not who was willing to risk more.
+
+## Who gets paid
+
+The **top 40% of the lobby** gets paid. The rest walk away having risked only their entry fee.
+
+$$
+\text{Paid Ranks} = \lceil \text{Max Participants} \times 0.40 \rceil
+$$
+
+<Note>
+  Lobbies of **1–3 players pay everyone** — there's no such thing as a competition where nobody wins.
+</Note>
+
+A 20-player lobby pays 8 ranks. A 50-player lobby pays 20. The smaller the field, the better your odds of cashing — but the math is fixed, not negotiable.
+
+## The payout curve
+
+Payouts are front-loaded. First place takes half the pool; the tail is split among the rest of the paid ranks.
+
+| Rank | Share of prize pool |
+| --- | --- |
+| 1 | 50% |
+| 2 | 20% |
+| 3 | 8% |
+| 4 | 5% |
+| 5\+ | share the remaining **17%**, weighted — earlier ranks get more |
+
+Ranks 5 and beyond split that 17% tail using **linearly decaying weights**: the last paying rank gets the smallest slice, and each rank above it gets progressively more. Any rounding dust from the split folds into **Rank 1**, so the pool always sums to exactly 100% — never a cent over or under.
+
+<Tip>
+  Higher ROI always beats lower ROI, no matter the dollar amounts involved. Grinding out a small, consistent gain across the whole competition window ranks above a big early gain that fades by settlement.
+</Tip>
+
+## Worked example
+
+A 20-player competition, \*\*$50 entry fee**. Total pool is $1,000; after the [8% platform fee](/about/fees), the prize pool is **\$920**. Top 40% of 20 players = **8 paid ranks**.
+
+Ranks 5–8 split the 17% tail (\$156.40) with weights of 4/3/2/1 out of 10:
+
+| Rank | Formula | Payout |
+| --- | --- | --- |
+| 1 | 50% of \$920 | **\$460.00** |
+| 2 | 20% of \$920 | **\$184.00** |
+| 3 | 8% of \$920 | **\$73.60** |
+| 4 | 5% of \$920 | **\$46.00** |
+| 5 | 4/10 of \$156.40 | **\$62.56** |
+| 6 | 3/10 of \$156.40 | **\$46.92** |
+| 7 | 2/10 of \$156.40 | **\$31.28** |
+| 8 | 1/10 of \$156.40 | **\$15.64** |
+
+Ranks 9–20 finished outside the paid zone — their max loss was capped at the \$50 entry fee, same as everyone else.
+
+<Warning>
+  **Inactivity penalty:** a player who never places a single trade — but would otherwise land in a paying rank on ROI alone — is scored as **−20%** and re-ranked below every active trader who finished better than −20%. You cannot sit on your hands and win a prize; the payout curve is for traders, not squatters.
+</Warning>
+
+## See also
+
+<CardGroup cols={2}>
+  <Card title="Competition lifecycle" icon="route" href="/competitions/lifecycle">
+    Join, activation, live trading, settlement, and claiming your payout.
+  </Card>
+
+  <Card title="Fees" icon="percent" href="/about/fees">
+    The 8% platform fee, simulated trading fees, and \$SPEC discounts.
+  </Card>
+</CardGroup>

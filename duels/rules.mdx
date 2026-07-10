@@ -1,0 +1,61 @@
+---
+title: "Duel rules & settlement"
+description: "Winning, ties, and cancellations"
+icon: "scale"
+---
+
+Duels are 1v1, winner-take-all. One outcome, one pot, no ambiguity. Here's exactly how a duel resolves.
+
+## Winning
+
+The player with the higher **ROI (PnL %)** when the duel ends takes the **entire pot**.
+
+Raw PnL doesn't decide it — ROI does. A player who turns a small position into a big percentage gain beats a player sitting on a larger dollar profit but a smaller percentage return.
+
+If ROI is tied, tie-breakers apply in order:
+
+<Steps>
+  <Step title="Higher PnL amount">
+    If both players have the same ROI, whoever has the larger absolute PnL wins.
+  </Step>
+  <Step title="Earliest to join">
+    If PnL amount is also tied, the duel goes to whoever joined first — the **creator**.
+  </Step>
+</Steps>
+
+## Exact draws
+
+If the result is an exact draw — for example, neither player trades — a paid duel is **not settled as a win/loss**. Both players are refunded their entry in full.
+
+## Opponent never joins
+
+Every duel has a **24-hour** acceptance window. If nobody accepts the challenge before it closes, the duel is **cancelled** and the creator is refunded in full. No pot is ever locked up indefinitely.
+
+## XP
+
+Duels do **not** award Season XP. XP comes exclusively from competitions — see [Earning XP](/rewards/earning) for how that works.
+
+<Note>
+  Duels settle **on-chain**, and payouts to winners (or refunds on a draw/cancellation) are **gasless** — you never pay network fees to collect what you're owed.
+</Note>
+
+## Summary
+
+| Scenario | Outcome |
+| --- | --- |
+| Higher ROI at duel end | Winner takes the whole pot |
+| ROI tied | Higher PnL amount wins |
+| ROI and PnL amount tied | Earliest joiner (creator) wins |
+| Exact draw (e.g. no trades) | Both players refunded in full |
+| No opponent joins within 24 hours | Duel cancelled, creator refunded |
+| Duel result | No Season XP awarded |
+
+<CardGroup cols={2}>
+  <Card title="Creating a duel" icon="swords" href="/duels/creating">
+    Set your stake, leverage cap, and time limit before you challenge someone.
+  </Card>
+
+  <Card title="Earning XP" icon="star" href="/rewards/earning">
+    See where Season XP actually comes from.
+  </Card>
+</CardGroup>

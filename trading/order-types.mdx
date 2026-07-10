@@ -1,0 +1,70 @@
+---
+title: "Order types"
+description: "Orders available in competitions"
+icon: "list"
+---
+
+Every position in a competition or duel is opened and managed with the same small toolkit of order types. No exotic order menus — just what you need to get in, get out, and manage risk fast.
+
+## Quick reference
+
+| Order type | What it does |
+| --- | --- |
+| Market | Fills immediately at the current price |
+| Limit | Rests at your chosen price until filled or cancelled |
+| Take Profit / Stop Loss | Closes a position automatically at a target ROI % or price |
+| Reduce Only | Flag that only shrinks or closes a position, never grows it |
+| Partial close | Close any percentage of a position, not just all-or-nothing |
+
+## Market
+
+A **Market** order fills immediately at the current price. Use it when you want in — or out — right now, no waiting on a fill.
+
+## Limit
+
+A **Limit** order rests at the price you set until it's filled or you cancel it. Each order is placed with a long default lifetime (about a year), so in practice it sits until you fill or cancel it, rather than expiring on you mid-competition.
+
+<Tip>
+  Reach for a Limit order when you want to enter or exit at a specific price instead of whatever the market happens to be trading at right now.
+</Tip>
+
+## Take Profit / Stop Loss (TP/SL)
+
+Attach a take-profit, a stop-loss, or both when you open a position — or add and edit them later on a position you already hold.
+
+Set each trigger one of two ways:
+
+<Tabs>
+  <Tab title="By ROI %">
+    The trigger fires once your position's ROI hits the percentage you set.
+  </Tab>
+  <Tab title="By price">
+    The trigger fires once the market hits the exact price you set.
+  </Tab>
+</Tabs>
+
+TP/SL isn't locked in at entry — edit or remove either trigger on an open position at any time.
+
+## Reduce Only
+
+**Reduce Only** is a flag you attach to an order, not a separate order type on its own. It guarantees the order can only reduce or close your existing position — it will never flip your position or add to it.
+
+## Partial closes
+
+You're never forced into an all-or-nothing exit. Close any percentage of a position — bank some profit and let the rest ride, or trim risk without closing out completely.
+
+<Note>
+  Advanced order types — scale orders, TWAP, stop-market, and trailing stops — aren't offered today.
+</Note>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Trading overview" icon="chart-line" href="/trading/overview">
+    How the simulated competition engine works.
+  </Card>
+
+  <Card title="Leverage" icon="gauge" href="/trading/leverage">
+    Leverage, margin, and liquidations.
+  </Card>
+</CardGroup>

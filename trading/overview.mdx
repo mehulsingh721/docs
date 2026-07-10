@@ -1,0 +1,45 @@
+---
+title: "The trading engine"
+description: "How trading works on Speculate"
+icon: "chart-candlestick"
+---
+
+The trading is simulated, the stakes are real. That's the entire model, in one line — here's how it actually works under the hood.
+
+Every competition and duel runs on Speculate's own matching and liquidation engine. It is priced off **real, live market data** streamed from Kraken — real market prices, not a toy sandbox. Your orders are matched, filled, and liquidated by Speculate's engine. They are **never routed to a live exchange**. No slippage from an order book you don't control, no counterparty but the market itself — just you, real prices, and the clock.
+
+## Your balance
+
+Join a competition or duel and you're handed \*\*$10,000 in simulated balance** — the same starting stack as every other participant, whether the entry fee was $0 or \$10,000. Nobody buys an advantage in starting capital. The only edge is how you trade.
+
+That balance is what you risk. Open a position on the competition's single symbol, go **LONG** or **SHORT**, and your equity moves with the market in real time.
+
+## One symbol, perpetual futures
+
+Each competition or duel trades exactly **one symbol** for its full duration — no switching tickers mid-contest, no diversifying across pairs. Everyone in the lobby is watching the same chart, trading the same asset, under the same clock. That's what makes it a competition rather than a portfolio exercise.
+
+Positions are perpetual futures: **LONG** if you're betting the price rises, **SHORT** if you're betting it falls. Standard perp mechanics apply — margin, leverage, and liquidation all work the way you'd expect from a real perps venue, because the engine is built to mirror one. See [Leverage & liquidations](/trading/leverage) for how margin and liquidation tiers work.
+
+## How you're ranked
+
+Rankings are decided by **ROI** — the percentage return on your $10,000 simulated balance, not raw PnL. A trader who turns $10,000 into $11,000 outranks one who turns $10,000 into \$10,500, regardless of position size or how much notional they pushed through the market. Percentage gains win, not dollar gains.
+
+Where that ranking lands you on the prize curve is covered in [Payouts](/competitions/payouts).
+
+<Note>
+  **Your risk is capped twice over.** The most you can lose of your simulated balance is the balance itself — \$10,000, and not a cent more, however aggressively you trade. And because that balance isn't real money, the most you can lose in real terms in a paid competition or duel is your **entry fee**. There's no path to owing more than you put in.
+</Note>
+
+<Warning>
+  **HyperStake is not this.** HyperStake is a separate product that executes **real Hyperliquid perps with real funds** — actual positions on a live exchange, not a simulated engine. Don't confuse the two. See [HyperStake overview](/hyperstake/overview) before you trade there.
+</Warning>
+
+<CardGroup cols={2}>
+  <Card title="Order types" icon="list" href="/trading/order-types">
+    Market, limit, take-profit/stop-loss, and reduce-only — how to actually place and manage trades.
+  </Card>
+
+  <Card title="Leverage & liquidations" icon="gauge" href="/trading/leverage">
+    Margin mode, leverage caps up to 100x, and how the liquidation engine works.
+  </Card>
+</CardGroup>

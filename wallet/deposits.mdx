@@ -1,0 +1,72 @@
+---
+title: "Deposits"
+description: "Fund your wallet with USDC"
+icon: "arrow-down-to-line"
+---
+
+Every deposit funds the real side of your account — the USDC that pays entry fees, sits in prize pools, backs your Duels, and margins HyperStake. Competition trading itself runs on a simulated **\$10,000 practice balance**; deposits are what get real money onto the platform in the first place.
+
+Speculate figures out the fastest path automatically. Connect your wallet, pick an amount, and you'll either get an instant transfer or a routed bridge — the app tells you which before you confirm anything.
+
+<Tabs>
+  <Tab title="Same network — instant">
+    If you're depositing **USDC on the same network your wallet is already on**, it's a direct transfer. No bridge, no bridge fee, no waiting on a relayer.
+
+    $$
+    1 \text{ USDC} = 1.00 \text{ USDC}
+    $$
+
+    <Check>
+      What you send is what lands. This is the cheapest and fastest way to fund your account — use it whenever you already hold USDC on a supported network.
+    </Check>
+  </Tab>
+  <Tab title="Another chain or token">
+    Depositing anything else — a different token, or USDC on a different chain — gets routed automatically through the **deBridge** bridge. Speculate supports bridged deposits from:
+
+    - Ethereum
+    - Arbitrum
+    - Base
+    - Polygon
+    - BNB Chain
+    - Optimism
+    - HyperEVM
+    - Solana
+
+    Before you confirm, you'll see the full quote: **exchange rate**, **bridge fee**, **network fee**, and an **estimated time** to land. Nothing moves until you approve that quote.
+
+    <Warning>
+      If fees would eat more than **~10%** of the deposit amount, Speculate warns you before you confirm. Small deposits from expensive chains are where this shows up most — check the quote.
+    </Warning>
+  </Tab>
+</Tabs>
+
+## Source wallet
+
+Bridged deposits pull directly from your own external wallet — Speculate never custodies funds before a deposit is initiated. Supported sources:
+
+- **EVM chains** — MetaMask, Rabby, or WalletConnect
+- **Solana** — Phantom or Solflare
+
+## Manual option
+
+Prefer to send it yourself? You can copy your deposit address from the wallet page and transfer USDC directly, without going through the in-app flow.
+
+<Warning>
+  Only send USDC on the **network shown for your deposit address**. Sending the wrong asset, or USDC on a network Speculate doesn't recognize for that address, can result in permanently lost funds.
+</Warning>
+
+## Minimum deposit amounts
+
+Deposits below these amounts won't be processed:
+
+| Asset | Minimum |
+| --- | --- |
+| USDC / USDT | 1 |
+| ETH / WETH | 0.0008 |
+| SOL | 0.01 |
+
+<Note>
+  There's no card or fiat on-ramp yet — deposits are crypto-only for now. Bridging is also disabled on testnets; use faucet USDC directly if you're testing there.
+</Note>
+
+Once your balance lands, it's ready to enter competitions, open Duels, or fund HyperStake. When you're ready to take money back out, head to [Withdrawals](/wallet/withdrawals).

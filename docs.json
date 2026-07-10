@@ -42,7 +42,11 @@
     "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "footer": {
-    "socials": { "x": "https://x.com/SpeculateTrade" }
+    "socials": {
+      "x": "https://x.com/SpeculateTrade",
+      "discord": "https://discord.com/invite/speculate",
+      "telegram": "https://t.me/speculateapp"
+    }
   },
   "background": {
     "color": { "light": "#ffffff", "dark": "#0c0d11" }

@@ -24,7 +24,7 @@ A HyperStake bet has four inputs. You control all four; the platform does the re
     **UP** or **DOWN**. You're betting on where price goes from here.
   </Step>
   <Step title="Pick a stake">
-    This is your maximum loss on the bet — anywhere from $1 to $**50,000**.
+    This is your intended maximum loss on the bet — anywhere from $1 to $**50,000**.
   </Step>
   <Step title="Pick a payout multiplier (k)">
     Quick-picks are **2x, 4x, 10x, 25x, 50x, and 100x**, with a slider for anything in between up to **100x**. The multiplier sets your payout, not a leverage dial — there is no leverage slider in HyperStake. Leverage is derived automatically from the asset you pick.
@@ -64,9 +64,9 @@ These parameters are what the system uses to derive your position's actual lever
 
 HyperStake is built to fail safely rather than surprise you:
 
-- **The stop always sits inside your liquidation price.** A normal stop-out happens before liquidation ever could — you lose your stake, not more.
-- **Entry uses an aggressive fill** that can cross the book by up to **1%** to get you in fast. If it can't fill at all, the bet **fails outright and you are not charged**.
-- **One open bet at a time.** You can't stack HyperStake positions — settle or close the current one before opening another.
+- **The stop always sits inside your liquidation price.** A normal stop-out happens before liquidation ever could — a losing bet costs you your stake, not a liquidation.
+- **Entry uses an aggressive fill** that can cross the book by up to **1%** to get you in fast. If it can't fill at all, the bet **fails outright and you are not charged**. Because your stop is measured from the quote price, a fill up to 1% away can make your realized loss slightly exceed your stake.
+- **One open bet at a time.** You can't stack HyperStake positions — wait for the current one to resolve (it settles automatically at its target or stop) before opening another.
 - **Take-profit and stop-loss are grouped for you** as a single **OCO (one-cancels-other) bracket** placed directly on Hyperliquid. You don't manage two separate orders.
 
 ## One-tap signing

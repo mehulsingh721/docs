@@ -4,7 +4,7 @@ description: "From join to payout"
 icon: "refresh-cw"
 ---
 
-Every competition moves through the same states, in the same order, no exceptions. Know the lifecycle and you know exactly when you can join, when the clock starts, and when your payout lands.
+Every competition moves through the same states, in the same order. Know the lifecycle and you know exactly when you can join, when the clock starts, and when your payout lands.
 
 ## States
 
@@ -15,16 +15,16 @@ Every competition moves through the same states, in the same order, no exception
 | **ENDED** | Settled. Positions are closed, ranks are final, prizes are paid. |
 | **CANCELLED** | The lobby never filled in time. Entry fees are refunded in full. |
 
-A competition is either **PENDING → LIVE → ENDED**, or it's **PENDING → CANCELLED**. There's no other path.
+A competition normally runs **PENDING → LIVE → ENDED**, or **PENDING → CANCELLED** if the lobby never fills. In rarer cases a live competition can still be cancelled and fully refunded — an admin cancellation, or a duel that ends in an exact tie.
 
 <Steps>
   <Step title="Join">
     Entering a paid competition is gasless. You sign a USDC permit and an authorization — that's it. Speculate's relayer submits the transaction and covers the gas. **Speculate pays the gas.**
 
-    Free competitions skip the payment step entirely — no permit, no entry fee. Open free competitions just need you logged in to join; token-gated free competitions add a one-time Solana wallet signature to prove you hold \$SPEC.
+    Free competitions skip the payment step entirely — no permit, no entry fee. Open free competitions just need you logged in to join; token-gated free competitions add a one-time Solana wallet signature to prove you hold at least ~\$50 of \$SPEC.
   </Step>
   <Step title="Fill and start">
-    A competition stays **PENDING** until its lobby fills to max participants. The moment it fills, the countdown begins: it goes **LIVE one hour later**, giving late joiners a last window and everyone else time to get ready.
+    A competition stays **PENDING** until its lobby fills to max participants. The moment it fills, registration closes and the countdown begins: it goes **LIVE one hour later**, giving everyone time to get ready before the clock starts.
 
     Private and whitelist competitions skip the wait — they go **LIVE immediately** once full.
   </Step>

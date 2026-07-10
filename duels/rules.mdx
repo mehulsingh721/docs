@@ -12,20 +12,13 @@ The player with the higher **ROI (PnL %)** when the duel ends takes the **entire
 
 Raw PnL doesn't decide it — ROI does. A player who turns a small position into a big percentage gain beats a player sitting on a larger dollar profit but a smaller percentage return.
 
-If ROI is tied, tie-breakers apply in order:
+If ROI is exactly tied, the **higher absolute PnL amount** breaks it — whoever booked the larger dollar profit takes the pot.
 
-<Steps>
-  <Step title="Higher PnL amount">
-    If both players have the same ROI, whoever has the larger absolute PnL wins.
-  </Step>
-  <Step title="Earliest to join">
-    If PnL amount is also tied, the duel goes to whoever joined first — the **creator**.
-  </Step>
-</Steps>
+If ROI **and** PnL amount are *both* identical, there's no winner: the duel is a **draw**, and both players are refunded (see [Exact draws](#exact-draws) below). Joining first doesn't win a tie.
 
 ## Exact draws
 
-If the result is an exact draw — for example, neither player trades — a paid duel is **not settled as a win/loss**. Both players are refunded their entry in full.
+A duel is a **draw** whenever both players finish with the *same ROI and the same PnL amount* — most often when neither player trades and both sit flat at 0%. A paid duel is then **not settled as a win/loss**: it's marked **cancelled**, and both players are refunded their entry in full — a clean 50-50 split of the pot, with no platform fee.
 
 ## Opponent never joins
 
@@ -44,9 +37,8 @@ Duels do **not** award Season XP. XP comes exclusively from competitions — see
 | Scenario | Outcome |
 | --- | --- |
 | Higher ROI at duel end | Winner takes the whole pot |
-| ROI tied | Higher PnL amount wins |
-| ROI and PnL amount tied | Earliest joiner (creator) wins |
-| Exact draw (e.g. no trades) | Both players refunded in full |
+| ROI tied, PnL amount differs | Higher PnL amount wins |
+| ROI and PnL amount both tied (e.g. no trades) | Draw — both refunded 50-50, duel cancelled |
 | No opponent joins within 24 hours | Duel cancelled, creator refunded |
 | Duel result | No Season XP awarded |
 
